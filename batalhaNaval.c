@@ -1,8 +1,6 @@
 #include <stdio.h>
 
 // Desafio Batalha Naval - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
-// Siga os comentários para implementar cada parte do desafio.
 
 int main() {
     // Criação das variáveis de linhas e colunas da matriz
@@ -32,6 +30,19 @@ int main() {
     for (int i = 6, j = 0; i <= 8; i++,j++){
         tabuleiro[i][j] = 3;
     } 
+
+    // Habilidade em cone
+    tabuleiro[4][4] = 5;
+    for(int j = 3; j <= 5; j++){
+        if(tabuleiro[5][j] != 3){
+            tabuleiro[5][j] = 5;
+        }
+    }
+    for (int j=2; j <= 6; j++){
+        if(tabuleiro[6][j] != 3){
+            tabuleiro[6][j] = 5;
+        }
+    }
     
     // Exibição dos valores da matriz 
     for (int i = 0; i < 10; i++){
