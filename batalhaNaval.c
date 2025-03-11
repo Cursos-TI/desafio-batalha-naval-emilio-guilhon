@@ -13,16 +13,26 @@ int main() {
     printf("TABULEIRO BATALHA NAVAL\n");
     printf(" ");
 
-    // Barco na vertical
+    // Barco na vertical(Começando no H7 e acabando no H9)
     for (int i = 3, j = 3; j <= 5; j++){
         tabuleiro[i][j] = 3;
     }
 
-    // Barco na horizontal
+    // Barco na horizontal(Começando no D4 e acabando no F4)
     for (int i = 6, j = 7; i <= 8; i++){
         tabuleiro[i][j] = 3;
     }
+    
+    // Primeiro barco na diagonal(Começando A1 e acabando no C3)
+    for (int i = 0, j = 0; i <= 2; i++,j++){
+        tabuleiro[i][j] = 3;
+    } 
 
+    // Segundo barco na diagonal(Começando A7 e acabando no C9)
+    for (int i = 6, j = 0; i <= 8; i++,j++){
+        tabuleiro[i][j] = 3;
+    } 
+    
     // Exibição dos valores da matriz 
     for (int i = 0; i < 10; i++){
         printf(" %c",linha[i]);
@@ -36,11 +46,6 @@ int main() {
         //Pula a linha quando termina de percorrer todos os valores de j(coluna)
         printf("\n");
     }
-    
-    // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
-    // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
-    // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
-    // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
 
     // Nível Mestre - Habilidades Especiais com Matrizes
     // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
