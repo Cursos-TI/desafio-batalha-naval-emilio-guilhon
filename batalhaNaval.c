@@ -32,18 +32,37 @@ int main() {
     } 
 
     // Habilidade em cone
+    // Topo do cone
     tabuleiro[4][4] = 5;
+
+    //Segunda linha do cone
     for(int j = 3; j <= 5; j++){
         if(tabuleiro[5][j] != 3){
             tabuleiro[5][j] = 5;
         }
     }
+
+    // Terceira linha do cone
     for (int j=2; j <= 6; j++){
         if(tabuleiro[6][j] != 3){
             tabuleiro[6][j] = 5;
         }
     }
     
+    // Habilidade em cruz
+    // Coluna da cruz
+    for(int i = 0; i <= 4; i++){
+        if(tabuleiro[i][7] != 3){
+            tabuleiro[i][7] = 5;
+        }
+    }
+    // Linha da cruz
+    for(int j = 5; j <= 9; j++){
+        if(tabuleiro[2][j] != 3){
+            tabuleiro[2][j] = 5;
+        }
+    }
+    // Habilidade de octaedro
     // Exibição dos valores da matriz 
     for (int i = 0; i < 10; i++){
         printf(" %c",linha[i]);
