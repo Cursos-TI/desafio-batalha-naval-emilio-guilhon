@@ -31,72 +31,61 @@ int main() {
         tabuleiro[i][j] = 3;
     } 
 
-    // Habilidade em cone
+    // Habilidade em cone(E5 a E7)
     // Topo do cone
-    tabuleiro[4][4] = 5;
+    tabuleiro[4][4] = 1;
 
     //Segunda linha do cone
     for(int j = 3; j <= 5; j++){
         if(tabuleiro[5][j] != 3){
-            tabuleiro[5][j] = 5;
+            tabuleiro[5][j] = 1;
         }
     }
 
     // Terceira linha do cone
     for (int j=2; j <= 6; j++){
         if(tabuleiro[6][j] != 3){
-            tabuleiro[6][j] = 5;
+            tabuleiro[6][j] = 1;
         }
     }
     
-    // Habilidade em cruz
+    // Habilidade em cruz(H1 a H5 e F3 a J3)
     // Coluna da cruz
     for(int i = 0; i <= 4; i++){
         if(tabuleiro[i][7] != 3){
-            tabuleiro[i][7] = 5;
+            tabuleiro[i][7] = 1;
         }
     }
     // Linha da cruz
     for(int j = 5; j <= 9; j++){
         if(tabuleiro[2][j] != 3){
-            tabuleiro[2][j] = 5;
+            tabuleiro[2][j] = 1;
         }
     }
-    // Habilidade de octaedro
+    // Habilidade em octaedro(B3 a B5 e A4 a C4)
+    // Topo do octaedro
+    tabuleiro[2][1] = 1;
+    // Base do octaedro
+    tabuleiro[4][1] = 1;
+    // Linha central do octaedro
+    for(int j = 0; j <= 2; j++){
+        if(tabuleiro[3][j] != 3){
+        tabuleiro[3][j] = 1;
+        }
+    }
     // Exibição dos valores da matriz 
     for (int i = 0; i < 10; i++){
         printf(" %c",linha[i]);
     }
     printf("\n");
     for (int i = 0; i < 10; i++){
-        printf("%d", i+1);
+        printf("%d", i + 1);
     for(int j = 0; j < 10; j++){
         printf(" %d",tabuleiro[i][j]);
         }
         //Pula a linha quando termina de percorrer todos os valores de j(coluna)
         printf("\n");
     }
-
-    // Nível Mestre - Habilidades Especiais com Matrizes
-    // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
-    // Sugestão: Utilize estruturas de repetição aninhadas para preencher as áreas afetadas por essas habilidades no tabuleiro.
-    // Sugestão: Exiba o tabuleiro com as áreas afetadas, utilizando 0 para áreas não afetadas e 1 para áreas atingidas.
-
-    // Exemplos de exibição das habilidades:
-    // Exemplo para habilidade em cone:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 1 1 1 1 1
-    
-    // Exemplo para habilidade em octaedro:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 0 0 1 0 0
-
-    // Exemplo para habilidade em cruz:
-    // 0 0 1 0 0
-    // 1 1 1 1 1
-    // 0 0 1 0 0
 
     return 0;
 }
